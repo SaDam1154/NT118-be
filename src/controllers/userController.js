@@ -29,9 +29,9 @@ const read = async (req, res, next) => {
 
 // [POST] api/user
 const create = async (req, res, next) => {
-    const { email, password, firstname, lastname, role, phone, gender, dateOfBirth, urlAvt } = req.body;
+    const { email, password, lastname, role, phone, address, dateOfBirth, urlAvt } = req.body;
     // Validate field
-    if (!email || !firstname || !lastname || !password || !role || !phone || !gender || !dateOfBirth) {
+    if (!email || !lastname || !password || !role) {
         return res.status(400).json({ success: false, status: 400, message: 'Missed field' });
     }
 
@@ -46,12 +46,11 @@ const create = async (req, res, next) => {
         const hash = await argon2.hash(password);
         const newUser = new User({
             email,
-            firstname,
             lastname,
             password: hash,
             role,
             phone,
-            gender,
+            address,
             dateOfBirth,
             urlAvt,
         });

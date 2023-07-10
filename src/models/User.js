@@ -20,11 +20,9 @@ const UserSchema = new Schema(
         },
         firstname: {
             type: String,
-            required: true,
         },
         lastname: {
             type: String,
-            required: true,
         },
         role: {
             type: Schema.Types.ObjectId,
@@ -33,7 +31,7 @@ const UserSchema = new Schema(
         phone: {
             type: String,
         },
-        gender: {
+        address: {
             type: String,
         },
         dateOfBirth: {
