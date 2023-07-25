@@ -1,10 +1,10 @@
 const express = require('express');
-const parseFilters = require('./middleware/parseFilters');
-const parseSorts = require('./middleware/parseSorts');
+const parseFilters = require('./src/middleware/parseFilters');
+const parseSorts = require('./src/middleware/parseSorts');
 require('dotenv').config();
-const corsConfig = require('./configs/cors');
-const connectDB = require('./configs/db');
-const route = require('./routes');
+const corsConfig = require('./src/configs/cors');
+const connectDB = require('./src/configs/db');
+const route = require('./src/routes');
 
 connectDB();
 
